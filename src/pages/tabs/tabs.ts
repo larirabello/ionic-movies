@@ -12,8 +12,8 @@ export class TabsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
   tab1Root: any = RecentesPage;
-  tab2Root: any = SobrePage;
-  tab3Root: any = FavoritosPage;
+  tab2Root: any = FavoritosPage;
+  tab3Root: any = SobrePage;
 
   constructor() {
 
