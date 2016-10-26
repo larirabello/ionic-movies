@@ -1,3 +1,23 @@
-page-home {
+page-recentes {
+    .scroll-content {
+        background-color: rgba(#EDEDED, .1);
+    }
 
+    ion-card-title {
+        text-align: center;
+    }
+
+    .poster {
+        padding-left: 0;
+ 
+        .item-inner {
+            padding-right: 0!important;
+
+            ion-label {
+                margin-right: 0;
+                height: 100px;
+                overflow: hidden;
+            }
+        }
+    }
 }

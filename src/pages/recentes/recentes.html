@@ -1,25 +1,26 @@
 <ion-content padding>
-  <ion-searchbar>
+  <ion-searchbar [(ngModel)]="search"
+                 (ionInput)="onSearchChange()">
 
   </ion-searchbar>
-  <ion-card>
+  <ion-card *ngFor="let movie of movies">
     <ion-card-content>
       <ion-card-title>
-        Meu card
+        {{movie.title}}
       </ion-card-title>
     </ion-card-content>
-    <ion-item>
+    <ion-item class="poster">
       <img src="http://image.tmdb.org/t/p/w500/811DjJTon9gD6hZ8nCjSitaIXFQ.jpg">
     </ion-item>
     <ion-row>
       <ion-col>
         <button ion-button clear icon-left>
           <ion-icon name="star"></ion-icon>
-          <div>Favoritar</div>
+          <div class="title">Favoritar</div>
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button clear icon-left>
+        <button ion-button clear icon-left (click)="exibirDetalhes(movie);">
           <ion-icon name="add"></ion-icon>
           <div>Detalhes</div>
         </button>
