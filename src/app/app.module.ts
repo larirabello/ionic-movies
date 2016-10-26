@@ -5,6 +5,7 @@ import { SobrePage } from '../pages/sobre/sobre';
 import { FavoritosPage } from '../pages/favoritos/favoritos';
 import { RecentesPage } from '../pages/recentes/recentes';
 import { DetalhesPage } from '../pages/detalhes/detalhes';
+import { SeriesPage } from '../pages/series/series';
 import { TabsPage } from '../pages/tabs/tabs';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     FavoritosPage,
     RecentesPage,
     DetalhesPage,
+    SeriesPage,
     TabsPage
   ],
   imports: [
@@ -28,6 +30,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     FavoritosPage,
     RecentesPage,
     DetalhesPage,
+    SeriesPage,
     TabsPage
   ],
   providers: []
