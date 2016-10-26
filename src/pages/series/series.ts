@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { SeriesProvider } from '../../providers/serie-provider';
+
 /*
   Generated class for the Series page.
 
@@ -9,14 +11,34 @@ import { NavController } from 'ionic-angular';
 */
 @Component({
   selector: 'page-series',
-  templateUrl: 'series.html'
+  templateUrl: 'series.html',
+  providers: [SeriesProvider]
 })
 export class SeriesPage {
 
-  constructor(public navCtrl: NavController) {}
+  private series:any;
+  private search:string;
 
-  ionViewDidLoad() {
-    console.log('Hello Series Page');
-  }
+  constructor(public navCtrl: NavController,
+              public seriesProvider: SeriesProvider) {
+
+                 this.search = "";
+                this.series = [];   
+
+              }
+
+    exibirDetalhes(serie:any) {
+        console.log(serie);
+        this.navCtrl.push(SeriesPage, {serie:serie}); //adiciona a classe no topo da pilha 
+      }
+
+     onSearchChange() {
+       console.log(this.search);
+
+       this.seriesProvider.search(this.search).then((data) => {
+         this.series = data.results;
+       }); 
+
+     }
 
 }

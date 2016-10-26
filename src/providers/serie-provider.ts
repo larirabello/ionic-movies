@@ -14,7 +14,7 @@ export class SeriesProvider {
   constructor(public http: Http) {
   }
   search(query:String) {
-    const url = 'https://api.themoviedb.org/3/search/series?api_key=505968226452720712447df7ece22d79&query=';
+    const url = 'https://api.themoviedb.org/3/search/tv?api_key=505968226452720712447df7ece22d79&query=';
     return this.http.get(url + query).map(res => res.json()).toPromise();
   }
 
